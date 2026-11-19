@@ -6,9 +6,9 @@
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
 | Group leader | Vaibhavi Bhamare | D9B 3 | https://github.com/2025vaibhavibhamare-dev |
-| Member 2 |Tanvish Patil |D9A 41 | [[Username]](https://github.com/9dtanvishpatil-art) |
-| Member 3 | Sumit Tithe   |D9B 63 |[ (https://github.com/SumitThite) |
-| Member 4 | Vikrant Kharatmol |D9B  71 | [](https://github.com/8511kharatmolvikrantsvhs-bit) |
+| Member 2 |Tanvish Patil |D9A 41 | (https://github.com/9dtanvishpatil-art) |
+| Member 3 | Sumit Tithe   |D9B 63 | (https://github.com/SumitThite) |
+| Member 4 | Vikrant Kharatmol |D9B  71 | (https://github.com/8511kharatmolvikrantsvhs-bit) |
 
 **Class:** [D9A/D9B]  
 **Group ID:** [e.g. D9A_Group01]  
