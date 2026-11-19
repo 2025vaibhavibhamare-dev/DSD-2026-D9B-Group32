@@ -130,24 +130,8 @@ The design requires only five input switches, three push buttons, four LED indic
 
 Furthermore, the classification logic is straightforward, requires minimal hardware resources and can be verified exhaustively for all 32 possible input values. Therefore, the project is technically achievable, cost-effective and suitable for demonstrating the practical application of FSM-based digital system design.
 ## 4. Architecture
+<img width="2720" height="1062" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/5cad6c67-9ed3-4957-9430-367b0cae9d9a" />
 
-flowchart LR
-    A["5-bit Age Input<br/>SW0–SW4"] --> B["5-bit Input Register<br/>Age_Reg"]
-    B --> C["Range Decoder<br/>0–12: Child<br/>13–19: Teen<br/>20–25: Adult<br/>26–31: Senior"]
-    C --> D["Moore FSM Controller<br/>IDLE, CHECK,<br/>CHILD, TEEN,<br/>ADULT, SENIOR"]
-    D --> E["Output Logic"]
-    E --> F["Child LED<br/>Green"]
-    E --> G["Teen LED<br/>Yellow"]
-    E --> H["Adult LED<br/>Red"]
-    E --> I["Senior LED<br/>Blue"]
-
-    J["START"] --> B
-    J --> D
-    K["ACK"] --> D
-    L["RESET"] --> D
-    L --> B
-    M["Clock"] --> B
-    M --> D
 
 
 ## 5. FSM Design
@@ -155,6 +139,7 @@ State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encodi
 
 **Diagram:** [Path/link]  
 **State table:** [Path/link]
+
 
 ## 6. Logisim Implementation
 - Logisim version: [Version]
