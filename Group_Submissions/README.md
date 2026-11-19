@@ -5,15 +5,15 @@
 ## 1. Team Details
 | Role | Student name | Roll number | GitHub username |
 |---|---|---|---|
-| Group leader | [Name] | [Roll no.] | [Username] |
-| Member 2 | [Name] | [Roll no.] | [Username] |
-| Member 3 | [Name] | [Roll no.] | [Username] |
-| Member 4 | [Name] | [Roll no.] | [Username] |
+| Group leader | Vaibhavi Bhamare | D9B 3 | https://github.com/2025vaibhavibhamare-dev |
+| Member 2 |Tanvish Patil |D9A 41 | [[Username]](https://github.com/9dtanvishpatil-art) |
+| Member 3 | Sumit Tithe   |D9B 63 |[ (https://github.com/SumitThite) |
+| Member 4 | Vikrant Kharatmol |D9B  71 | [](https://github.com/8511kharatmolvikrantsvhs-bit) |
 
 **Class:** [D9A/D9B]  
 **Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [Fork URL]  
-**Final Pull Request URL:** [URL]
+**Repository URL:** [[Fork URL] ](https://github.com/2025vaibhavibhamare-dev/DSD-2026-D9B-Group32) 
+**Final Pull Request URL:**
 
 ## 2. Assigned Problem Statement
 - **Number/title:** [Details]
