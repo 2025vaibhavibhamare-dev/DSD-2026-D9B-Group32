@@ -33,26 +33,26 @@ To simulate and verify all 32 possible age input combinations (0–31) using a V
 To implement the design on a Spartan-7 FPGA using Xilinx Vivado.
 - **Inputs and outputs:**
 - Signal Width Description
-clk 1 bit Clock signal for synchronous operation
-reset 1 bit Active-high reset to initialise the FSM
-start 1 bit Initiates age capture and classification
-ack 1 bit Returns the FSM to IDLE state2
-age_switches[4:0] 5 bits Binary age input through five switches (0–31)
+clk |1bit |Clock signal for synchronous operation
+reset |1 bit| Active-high reset to initialise the FSM
+start| 1 bit| Initiates age capture and classification
+ack| 1 bit| Returns the FSM to IDLE state2
+age_switches[4:0]| 5 bits| Binary age input through five switches (0–31)
 
 Outputs:
 Signal  Width Description
-child_led  1 bit  Indicates Child category (0–12)
-teen_led  1 bit  Indicates Teen category (13–19)
-adult_led  1 bit Indicates Adult category (20–25)
-senior_led  1 bit  Indicates Senior category (26–31)
+child_led | 1 bit|  Indicates Child category (0–12)
+teen_led  | 1 bit| Indicates Teen category (13–19)
+adult_led |1 bit | Indicates Adult category (20–25)
+senior_led| 1bit| Indicates Senior category (26–31)
 
 Age Classification:
 
 Age Range Category LED Output
-0–12 Child Green
-13–19 Teen Yellow
-20–25 Adult Red
-26–31  Senior Blue
+0–12 | Child|Green
+13–19| Teen | Yellow
+20–25|Adult | Red
+26–31  |Senior| Blue
 - **Constraints and assumptions:** Input Range: The system accepts only 5-bit unsigned binary inputs, representing ages from 0 to 31.
 
 Age Classification: Each age value belongs to exactly one of the four predefined categories, with no overlapping ranges.
