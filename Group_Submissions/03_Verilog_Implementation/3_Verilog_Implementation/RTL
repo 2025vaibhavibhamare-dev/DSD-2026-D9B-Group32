@@ -1,0 +1,122 @@
+
+module age_group_detector (
+    input wire clk,
+    input wire reset,
+    input wire start,
+    input wire ack,
+    input wire [4:0] age_switches,
+
+    output reg child_led,
+    output reg teen_led,
+    output reg adult_led,
+    output reg senior_led
+);
+
+    // State encoding
+    localparam IDLE   = 3'b000;
+    localparam CHECK  = 3'b001;
+    localparam CHILD  = 3'b010;
+    localparam TEEN   = 3'b011;
+    localparam ADULT  = 3'b100;
+    localparam SENIOR = 3'b101;
+
+    // State and age registers
+    reg [2:0] state;
+    reg [4:0] age_reg;
+
+    // Input register: captures age on START
+    always @(posedge clk) begin
+        if (reset)
+            age_reg <= 5'd0;
+        else if (state == IDLE && start)
+            age_reg <= age_switches;
+    end
+
+    // Moore FSM: state transition logic
+    always @(posedge clk) begin
+        if (reset)
+            state <= IDLE;
+
+        else begin
+            case (state)
+
+                IDLE: begin
+                    if (start)
+                        state <= CHECK;
+                    else
+                        state <= IDLE;
+                end
+
+                CHECK: begin
+                    if (age_reg <= 5'd12)
+                        state <= CHILD;
+
+                    else if (age_reg <= 5'd19)
+                        state <= TEEN;
+
+                    else if (age_reg <= 5'd25)
+                        state <= ADULT;
+
+                    else
+                        state <= SENIOR;
+                end
+
+                CHILD: begin
+                    if (ack)
+                        state <= IDLE;
+                end
+
+                TEEN: begin
+                    if (ack)
+                        state <= IDLE;
+                end
+
+                ADULT: begin
+                    if (ack)
+                        state <= IDLE;
+                end
+
+                SENIOR: begin
+                    if (ack)
+                        state <= IDLE;
+                end
+
+                default: state <= IDLE;
+
+            endcase
+        end
+    end
+
+    // Moore output logic
+    always @(*) begin
+
+        child_led  = 1'b0;
+        teen_led   = 1'b0;
+        adult_led  = 1'b0;
+        senior_led = 1'b0;
+
+        case (state)
+
+            CHILD:
+                child_led = 1'b1;
+
+            TEEN:
+                teen_led = 1'b1;
+
+            ADULT:
+                adult_led = 1'b1;
+
+            SENIOR:
+                senior_led = 1'b1;
+
+            default: begin
+                child_led  = 1'b0;
+                teen_led   = 1'b0;
+                adult_led  = 1'b0;
+                senior_led = 1'b0;
+            end
+
+        endcase
+    end
+
+endmodule
