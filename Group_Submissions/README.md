@@ -16,11 +16,60 @@
 **Final Pull Request URL:**
 
 ## 2. Assigned Problem Statement
-- **Number/title:** [Details]
-- **Problem summary:** [In your own words]
-- **Objective:** [What must the system achieve?]
-- **Inputs and outputs:** [List signals, widths and meaning]
-- **Constraints and assumptions:** [List and justify]
+- **Number/title:** Age Group Detector using Moore Finite State Machine (FSM) with Four-Category Classification.5
+- **Problem summary:** The project involves designing a digital system that classifies a person's age into four categories: Child (0–12), Teen (13–19), Adult (20–25), and Senior (26–31). A 5-bit binary input is used to represent the age, which is stored in an input register and processed by a range decoder. A Moore Finite State Machine (FSM) determines the corresponding age category and activates the respective LED indicator. The original three-category age detector is modified by introducing an additional Senior category.
+- **Objective:** To design and implement a 5-bit age input system using Verilog HDL.
+
+To develop a range decoder for classifying ages into four distinct categories.
+
+To design a Moore FSM with separate states for IDLE, CHILD, TEEN, ADULT, and SENIOR, along with an intermediate CHECK state.
+
+To implement START, ACK, and RESET control operations.
+
+To display the detected age category using four individual LED indicators.
+
+To simulate and verify all 32 possible age input combinations (0–31) using a Verilog testbench.
+
+To implement the design on a Spartan-7 FPGA using Xilinx Vivado.
+- **Inputs and outputs:**
+- Signal Width Description
+clk 1 bit Clock signal for synchronous operation
+reset 1 bit Active-high reset to initialise the FSM
+start 1 bit Initiates age capture and classification
+ack 1 bit Returns the FSM to IDLE state2
+age_switches[4:0] 5 bits Binary age input through five switches (0–31)
+
+Outputs:
+Signal  Width Description
+child_led  1 bit  Indicates Child category (0–12)
+teen_led  1 bit  Indicates Teen category (13–19)
+adult_led  1 bit Indicates Adult category (20–25)
+senior_led  1 bit  Indicates Senior category (26–31)
+
+Age Classification:
+
+Age Range Category LED Output
+0–12 Child Green
+13–19 Teen Yellow
+20–25 Adult Red
+26–31  Senior Blue
+- **Constraints and assumptions:** Input Range: The system accepts only 5-bit unsigned binary inputs, representing ages from 0 to 31.
+
+Age Classification: Each age value belongs to exactly one of the four predefined categories, with no overlapping ranges.
+
+Input Registration: The age entered through the switches is captured in the input register when START is activated while the FSM is in IDLE.
+
+Moore FSM Operation: The output LEDs depend only on the current FSM state and not directly on the input age.
+
+Reset Operation: An active-high synchronous reset initialises the FSM to the IDLE state, with all LEDs turned OFF.
+
+Acknowledgement: The ACK signal returns the FSM from any classification state to IDLE, switching OFF all category LEDs.
+
+Clock Dependency: All state transitions and input registration operations are synchronised with the rising edge of the clock.
+
+Single Category Output: Only one category LED is activated at a time. All LEDs remain OFF in the IDLE and CHECK states.
+
+Hardware Interface: Five slide switches are used for age input, three push buttons for START, ACK and RESET, and four LEDs for category indication on the Spartan-7 FPGA board.
 
 ## 3. Problem Analysis and Proposed Solution
 Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
