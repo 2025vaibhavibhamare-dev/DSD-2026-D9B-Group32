@@ -32,6 +32,7 @@ To simulate and verify all 32 possible age input combinations (0–31) using a V
 
 To implement the design on a Spartan-7 FPGA using Xilinx Vivado.
 - **Inputs and outputs:**
+- |---|---|---|---|
 - Signal Width Description
 clk |1bit |Clock signal for synchronous operation
 reset |1 bit| Active-high reset to initialise the FSM
@@ -72,14 +73,82 @@ Single Category Output: Only one category LED is activated at a time. All LEDs r
 Hardware Interface: Five slide switches are used for age input, three push buttons for START, ACK and RESET, and four LEDs for category indication on the Spartan-7 FPGA board.
 
 ## 3. Problem Analysis and Proposed Solution
-Explain the requirements, edge cases, proposed solution, distinctive features and why the design is feasible.
+## 3. Problem Analysis and Proposed Solution
 
-[Write here]
+### 3.1 Requirements Analysis
 
+The Age Group Detector requires a digital system capable of accepting a 5-bit binary age input and classifying it into four predefined categories: Child, Teen, Adult and Senior. The system must store the input age, decode its range and use a Moore Finite State Machine (FSM) to generate the corresponding output.
+
+The major requirements are:
+
+- Accept a 5-bit age input representing values from 0 to 31.
+- Store the input using a 5-bit register when the START signal is activated.
+- Classify the age into one of four categories using range-based combinational logic.
+- Implement a Moore FSM with IDLE, CHECK, CHILD, TEEN, ADULT and SENIOR states.
+- Use RESET to initialise the system and ACK to return it to the IDLE state.
+- Activate the appropriate LED for the detected category while keeping the remaining LEDs OFF.
+- Verify all 32 possible input combinations through Verilog simulation and implement the design on a Spartan-7 FPGA.
+
+### 3.2 Edge Cases and Challenges
+
+The design must correctly handle boundary values to ensure accurate classification. Particular attention is given to ages at the transition points between categories.
+
+- **Lower and upper limits:** Ages 0 and 31 must be correctly classified as Child and Senior respectively.
+- **Category boundaries:** Ages 12, 13, 19, 20, 25 and 26 must activate the correct category LED.
+- **Reset condition:** When RESET is activated, the FSM must return to IDLE and all LEDs must turn OFF.
+- **Input stability:** Once START is activated, the entered age must be stored so that subsequent changes in switch positions do not affect the current classification.
+- **Acknowledgement:** ACK must return the system from any classification state to IDLE.
+- **Invalid state handling:** Any undefined FSM state must return to IDLE through the default state condition.
+
+### 3.3 Proposed Solution
+
+The proposed solution uses a combination of sequential and combinational logic implemented in Verilog HDL.
+
+Initially, the age is entered through five switches and captured by a 5-bit input register when START is activated. The registered age is then processed by a combinational range decoder, which identifies the corresponding category based on predefined age intervals.
+
+The decoded result is used by a Moore FSM to determine the system state. The FSM consists of six states: IDLE, CHECK, CHILD, TEEN, ADULT and SENIOR. The CHECK state evaluates the registered age and transfers the FSM to the appropriate classification state.
+
+Based on the current state, the output logic activates one of the four LEDs. The RESET signal initialises the system, while ACK returns the FSM to IDLE after classification.
+
+The design is developed and simulated using Xilinx Vivado and subsequently programmed onto a Spartan-7 FPGA board for hardware verification.
+
+### 3.4 Distinctive Features
+
+- **Four-category classification:** Extends the original three-category age detector by introducing a Senior category (26–31).
+- **Moore FSM architecture:** Ensures that LED outputs depend only on the current state, providing stable and predictable outputs.
+- **Registered input:** Stores the entered age to maintain input stability during classification.
+- **Independent LED indicators:** Uses four separate LEDs to represent the four age categories.
+- **Control operations:** Incorporates START, ACK and RESET signals for controlled system operation.
+- **Complete input verification:** Tests all 32 possible age combinations using an automated Verilog testbench.
+- **FPGA implementation:** Demonstrates the practical implementation of digital logic using a Spartan-7 FPGA and Vivado.
+
+### 3.5 Feasibility of the Design
+
+The proposed design is feasible because it uses basic digital design concepts such as registers, combinational logic, comparators and finite state machines. These components can be efficiently described using Verilog HDL and implemented using the FPGA resources available on the Spartan-7 board.
+
+The design requires only five input switches, three push buttons, four LED indicators and an onboard clock. Vivado provides the necessary environment for RTL design, behavioural simulation, synthesis, implementation and bitstream generation.
+
+Furthermore, the classification logic is straightforward, requires minimal hardware resources and can be verified exhaustively for all 32 possible input values. Therefore, the project is technically achievable, cost-effective and suitable for demonstrating the practical application of FSM-based digital system design.
 ## 4. Architecture
-Insert/link the block diagram and explain modules, data/control flow and design trade-offs.
 
-![Block diagram](path/to/block_diagram.png)
+flowchart LR
+    A["5-bit Age Input<br/>SW0–SW4"] --> B["5-bit Input Register<br/>Age_Reg"]
+    B --> C["Range Decoder<br/>0–12: Child<br/>13–19: Teen<br/>20–25: Adult<br/>26–31: Senior"]
+    C --> D["Moore FSM Controller<br/>IDLE, CHECK,<br/>CHILD, TEEN,<br/>ADULT, SENIOR"]
+    D --> E["Output Logic"]
+    E --> F["Child LED<br/>Green"]
+    E --> G["Teen LED<br/>Yellow"]
+    E --> H["Adult LED<br/>Red"]
+    E --> I["Senior LED<br/>Blue"]
+
+    J["START"] --> B
+    J --> D
+    K["ACK"] --> D
+    L["RESET"] --> D
+    L --> B
+    M["Clock"] --> B
+    M --> D
+
 
 ## 5. FSM Design
 State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
