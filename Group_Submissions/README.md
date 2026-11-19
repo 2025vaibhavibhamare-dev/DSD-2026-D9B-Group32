@@ -137,8 +137,7 @@ Furthermore, the classification logic is straightforward, requires minimal hardw
 ## 5. FSM Design
 State whether the design uses an FSM. If yes, specify Moore/Mealy, states/encoding, state diagram, state table, transition conditions and reset behaviour. If not, justify the alternative.
 
-**Diagram:** [Path/link]  
-**State table:** [Path/link]
+<img width="2008" height="998" alt="mermaid-diagram (3)" src="https://github.com/user-attachments/assets/3f053bdb-854b-433b-805c-dfb0cfe8a95d" />
 
 
 ## 6. Logisim Implementation
