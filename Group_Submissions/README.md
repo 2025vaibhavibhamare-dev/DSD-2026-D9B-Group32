@@ -11,7 +11,7 @@
 | Member 4 | Vikrant Kharatmol |D9B  71 | (https://github.com/8511kharatmolvikrantsvhs-bit) |
 
 **Class:** [D9A/D9B]  
-**Group ID:** [e.g. D9A_Group01]  
+**Group ID:** [ D9A_Group32]  
 **Repository URL:** (https://github.com/2025vaibhavibhamare-dev/DSD-2026-D9B-Group32) 
 **Final Pull Request URL:**
 
