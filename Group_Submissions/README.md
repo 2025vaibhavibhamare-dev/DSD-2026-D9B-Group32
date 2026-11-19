@@ -12,7 +12,7 @@
 
 **Class:** [D9A/D9B]  
 **Group ID:** [e.g. D9A_Group01]  
-**Repository URL:** [[Fork URL] ](https://github.com/2025vaibhavibhamare-dev/DSD-2026-D9B-Group32) 
+**Repository URL:** (https://github.com/2025vaibhavibhamare-dev/DSD-2026-D9B-Group32) 
 **Final Pull Request URL:**
 
 ## 2. Assigned Problem Statement
