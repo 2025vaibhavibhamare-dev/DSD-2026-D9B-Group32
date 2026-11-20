@@ -32,4 +32,4 @@
 ## Group leader declaration
 I confirm that I have checked the submission and that it contains the group's project work and supporting evidence to the best of my knowledge.
 
-**Name:** [ ] | **Date/time:** [ ] | **Pull Request URL:** [ ]
+**Name:** [Vaibhavi Bhamare ] | **Date/time:** [20th October 2026 10.43 am ] | **Pull Request URL:** [ https://github.com/MrugendraVasmatkar/Digital_System_Design_Practical_2026_27_D9A_B/pull/17#issue-6487901179]
