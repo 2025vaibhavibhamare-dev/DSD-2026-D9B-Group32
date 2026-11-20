@@ -49,9 +49,9 @@ Add rows as needed.
 
 ### 20 October 2026
 - Completed:Total Project Completed
-- Pending:
+- Pending:None
 - Evidence uploaded:Uploaded
-- Final submission status:
+- Final submission status:Done
 
 ## 5. Group leader confirmation
 I confirm that this status reflects the work completed by the group and that the linked evidence has been uploaded.
