@@ -31,7 +31,7 @@ Update at least once every two hours and at each major milestone. Record actual 
 | 19/11/2026 | 2 hours | Developed Verilog RTL code for the four-category Age Group Detector using Moore FSM. | `03_Verilog_Implementation/RTL/` | None | Prepare and run testbench. | Group |
 | 19/11/2026 | 1.5 hours | Created testbench and simulated all 32 age combinations in Vivado. | `03_Verilog_Implementation/Simulation_Results/` | None | Save waveform and verification results. | Group |
 | 20/11/2026 | 1.5 hours | Analysed simulation waveforms, verified 32 PASS and 0 FAIL results and checked FPGA implementation errors. | `03_Verilog_Implementation/Simulation_Results/` | Missing FPGA pin and I/O standard constraints. | Correct XDC constraints and generate bitstream. | Group |
-| 20/11/2026 | 1.5 hours | Prepared final project report, organised screenshots and uploaded project documentation to GitHub. | `07_Final_Report/` | Hardware validation pending. | Complete FPGA programming and hardware testing. | Group |
+| 20/11/2026 | 1.5 hours | Prepared final project report, organised screenshots and uploaded project documentation to GitHub. | `07_Final_Report/` | None | Complete FPGA programming and hardware testing. | Group |
 Add rows as needed.
 
 ## 3. Current blockers and support required
