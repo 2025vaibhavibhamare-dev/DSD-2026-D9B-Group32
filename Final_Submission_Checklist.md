@@ -1,6 +1,6 @@
 # Final Submission Checklist
 
-**Class:** [D9A/D9B] | **Group ID:** [ ] | **Project:** [ ] | **Group leader:** [ ]
+**Class:** [D9A/D9B] | **Group ID:** [32 ] | **Project:** [Age Group Detector] | **Group leader:** [Vaibhavi Bhamare ]
 
 ## Project files
 - [Done ] Problem analysis, requirements and assumptions.
